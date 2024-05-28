@@ -1,0 +1,30 @@
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/base.css';
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/components.css';
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/utilities.css';
+
+/* Add your custom styles and configurations here */
+@layer utilities {
+  .bg-primary-50 { background-color: #eff6ff; }
+  .bg-primary-100 { background-color: #dbeafe; }
+  .bg-primary-200 { background-color: #bfdbfe; }
+  .bg-primary-300 { background-color: #93c5fd; }
+  .bg-primary-400 { background-color: #60a5fa; }
+  .bg-primary-500 { background-color: #3b82f6; }
+  .bg-primary-600 { background-color: #2563eb; }
+  .bg-primary-700 { background-color: #1d4ed8; }
+  .bg-primary-800 { background-color: #1e40af; }
+  .bg-primary-900 { background-color: #1e3a8a; }
+  .bg-primary-950 { background-color: #172554; }
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+}
+.carter-one-regular {
+    font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
