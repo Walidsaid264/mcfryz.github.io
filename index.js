@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', () => showItem(i));
         });
 
-        interval = setInterval(showNextItem, 10000);
+        interval = setInterval(showNextItem, 100000);
 
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
