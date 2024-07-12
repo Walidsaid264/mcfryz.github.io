@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,8 +10,19 @@
     <link rel="icon" href="images/mcfryz-logo.svg"  />
 
     <title class="italic">Mc Fryz</title>
+
+    <style>
+      #map {
+          height: 500px; 
+          width: 100%;
+      }
+  </style>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4TJPPV_ZMoY-YJkxHXoMqlwobEAkbYsk&loading=async&callback=initMap&v=3.55">
+</script>
+  
 </head>
-    <body class="carter-one-regular">
+    <body class="carter-one-regular" onload="initMap()">
     <!-- header -->
     <header>
         <nav class="bg-yellow-300 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-yellow-300">
@@ -191,6 +201,7 @@
             <div class="relative w-full  mx-auto overflow-hidden pt-8">
                 <!-- Carousel Items -->
                 <div class="carousel flex transition-transform duration-500 ease-in-out">
+                  <!-- Chips -->
                     <div class="carousel-item  text-white flex items-center justify-center p-8">
                         <div class="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-8 h-auto lg:py-12 lg:px-20 ">
                             <div class="w-full flex flex-col items-center ">
@@ -271,6 +282,7 @@
             
                         </div>
                     </div>
+                    <!-- Burgers -->
                     <div class="carousel-item  text-white flex items-center justify-center p-8">
                         <div class=" grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-8 h-auto lg:py-12 lg:px-20 ">
                           <div class="w-full flex flex-col items-center ">
@@ -331,26 +343,27 @@
                             </p>
                           </div>
                           
-                        </div>
-                  </div>
-                  <div class="w-full flex flex-col items-center ">
-                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                        <img class="w-full" src="images/frys.png" alt="Sunset in the mountains">
-                        <div class="px-6 py-4 flex flex-col items-center">
-                          <div class="font-bold text-black text-xl mb-2">Frys</div>
-                          <div class="px-6 pt- pb-2">
-                            <span class="inline-block  rounded-full px-3 py-1 text-lg font-normal text-red-700 mr-2 mb-2">Ksh. 1,960.00</span>
-                          </div>
-                          <p class="text-gray-700 text-base">
-                            Deep Fried sliced potato strips
-                          </p>
-                        </div>
-                        
                       </div>
-                  </div>
-            
-                        </div>
                     </div>
+                    <div class="w-full flex flex-col items-center ">
+                      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                          <img class="w-full" src="images/frys.png" alt="Sunset in the mountains">
+                          <div class="px-6 py-4 flex flex-col items-center">
+                            <div class="font-bold text-black text-xl mb-2">Frys</div>
+                            <div class="px-6 pt- pb-2">
+                              <span class="inline-block  rounded-full px-3 py-1 text-lg font-normal text-red-700 mr-2 mb-2">Ksh. 1,960.00</span>
+                            </div>
+                            <p class="text-gray-700 text-base">
+                              Deep Fried sliced potato strips
+                            </p>
+                          </div>
+                          
+                      </div>
+                    </div>
+              
+                    </div>
+                    </div>
+                    <!-- Chickens -->
                     <div class="carousel-item  text-white flex items-center justify-center p-8">
                         <div class="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-8 h-auto lg:py-12 lg:px-20 ">
                           <div class="w-full flex flex-col items-center ">
@@ -431,6 +444,7 @@
             
                         </div>
                     </div>
+                    <!-- Combos -->
                     <div class="carousel-item  text-white flex items-center justify-center p-8">
                         <div class="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-8 h-auto lg:py-12 lg:px-20 ">
                           <div class="w-full flex flex-col items-center ">
@@ -511,6 +525,7 @@
             
                         </div>
                     </div>
+                    <!-- Drinks -->
                     <div class="carousel-item  text-white flex items-center justify-center p-8">
                         <div class="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-8 h-auto lg:py-12 lg:px-20 ">
                           <div class="w-full flex flex-col items-center ">
@@ -752,80 +767,13 @@
 
     </section>
     <section id="section6">
-        <div class="w-full bg-white h-auto pt-24 pb-32">
-            <div class="w-full pb-12">
-                <div class=" text-center text-black text-4xl font-normal">Find An Outlet Near You</div>
-            </div>
-            <div class="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-4 h-auto lg:py-12 lg:px-20 ">
-                <div class="w-full flex flex-col items-center ">
-                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                        <img class="w-full" src="images/fullpoussin.png" alt="Sunset in the mountains">
-                        <div class="px-6 py-4">
-                          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-                          <p class="text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                          </p>
-                        </div>
-                        <div class="px-6 pt-4 pb-2">
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-                        </div>
-                      </div>
-                </div>
-                <div class="w-full flex flex-col items-center  ">
-                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                        <img class="w-full" src="images/fullpoussin.png" alt="Sunset in the mountains">
-                        <div class="px-6 py-4">
-                          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-                          <p class="text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                          </p>
-                        </div>
-                        <div class="px-6 pt-4 pb-2">
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-                        </div>
-                      </div>
-                </div>
-                <div class="w-full flex flex-col items-center ">
-                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                        <img class="w-full" src="images/fullpoussin.png" alt="Sunset in the mountains">
-                        <div class="px-6 py-4">
-                          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-                          <p class="text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                          </p>
-                        </div>
-                        <div class="px-6 pt-4 pb-2">
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-                        </div>
-                      </div>
-                </div>
-                <div class="w-full flex flex-col items-center">
-                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                        <img class="w-full" src="images/fullpoussin.png" alt="Sunset in the mountains">
-                        <div class="px-6 py-4">
-                          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-                          <p class="text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                          </p>
-                        </div>
-                        <div class="px-6 pt-4 pb-2">
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-                        </div>
-                      </div>
-                </div>
-
-            </div>
-        </div>
-
-    </section>
+      <div class="w-full bg-white h-auto pt-24 pb-32">
+          <div class="w-full pb-12">
+              <div class="text-center text-black text-4xl font-normal">Find An Outlet Near You</div>
+          </div>
+          <div id="map"></div>
+      </div>
+  </section>
     <section id="section7" class="w-full h-auto bg-white ">
         <div class="bg-[url('images/Outlet.png')] bg-no-repeat bg-cover bg-center w-full h-full object-cover pt-16">
             <div class="w-full pb-12">
@@ -891,7 +839,47 @@
     </section>
     
     
-
+    <script>
+      async function initMap() {
+            const locations = [
+                { name: "Mc Fry's-South B",address:"Mchumbi Rd, Nairobi", Contact: "0786425640", lat: -1.3101264519890934, lng: 36.83767291299854 }, 
+                { name: "Mc Fry's Highridge",address:"3rd Parklands Ave, Nairobi", Contact: "0736268000", lat: -1.2589335394310206, lng:  36.81756974042519 },
+                { name: "Mc Fry's-Butere Road",address:"Butere Rd, Nairobi", Contact: "0737254006", lat: -1.30291854869897, lng: 36.83715792889934 }, 
+                { name: "Mc Distributors - Westlands",address:"Mpaka Rd, Nairobi", Contact: "0737254006", lat: -1.2628408256011898, lng:  36.80388439026575 },
+                { name: "McFrys",address:"PR9F+6XG, Lagos Rd, Nairobi", Contact: "0732810662", lat: -1.2805175921768965, lng: 36.82534206106559 },  
+                { name: "McFrys Lavington",address:"PQ9C+V6M, James Gichuru Road, Nairobi", Contact: "", lat: -1.2790113607875353, lng: 36.77068614368174 }, 
+                { name: "McFrys Langata Rd Bomas",address:"MQ57+72R, Langata Rd, Nairobi", Contact: "0725706499", lat: -1.3390999768200122, lng: 36.76289793573134 },
+                { name: "Mc Fry's-Adams Arcade",address:"Ngong Road, Adams Arcade, Nairobi", Contact: "0732810663", lat: -1.299435445420921, lng: 36.78062157436494 },
+                { name: "Mc Frys - Karen",address:"MPG4+WVC, Nairobi", Contact: "0720516823", lat: -1.3211313588063003, lng: 36.707186412998546 }, 
+                { name: "Mc Fry'S - Hurlingham",address:"Woodlands Ln, North", Contact: "0206997481", lat: -1.2931149591207736, lng: 36.79913560504815 }, 
+                { name: "Mc Fries Westlands",address:"Mpaka House, Parklands/Highridge Mpaka, Nairobi", Contact: "0737254006", lat: -1.2652093504546689, lng: 36.801999147778105 }, 
+                { name: "Mc Fry's-Nairobi West",address:"Muthaiti Ave, Nairobi", Contact: "0737254006", lat: -1.306744879899545, lng:  36.8238470698666 },
+                { name: "Mc Fry's Magharibi",address:"Magharibi Place, Nairobi", Contact: "0736260600", lat: -1.3137807603702385, lng: 36.81710515859217 },
+                { name: "Mc Fry's-Gigiri",address:"Limuru Rd, Nairobi", Contact: "0739387595", lat: -1.2377095441362655, lng: 36.81017146736081 },
+                ];
+  
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: locations[0], 
+            });
+  
+            locations.forEach(location => {
+                const marker = new google.maps.Marker({
+                    position: { lat: location.lat, lng: location.lng },
+                    map: map,
+                    title: location.name
+                });
+  
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `<h3>${location.name}</h3><p>Address: ${location.address || 'No address available'}</p>`
+                });
+  
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+    </script>
     <script src="index.js"></script>
 
     </body>

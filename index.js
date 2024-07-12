@@ -5,27 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleButton.addEventListener('click', () => {
       menu.classList.toggle('hidden');
     });
-  
-    // Dark mode toggle logic (optional)
-    const darkModeToggle = document.querySelector('.dark-mode-toggle');
-    const html = document.documentElement;
-  
-    darkModeToggle.addEventListener('click', () => {
-      if (html.classList.contains('dark')) {
-        html.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        html.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-  
-    if (localStorage.getItem('theme') === 'dark' || 
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      html.classList.add('dark');
-    } else {
-      html.classList.remove('dark');
-    }
   });
 
   const carousel = document.querySelector('.carousel');
@@ -65,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', () => showItem(i));
         });
 
-        interval = setInterval(showNextItem, 100000);
+        interval = setInterval(showNextItem, 10000);
 
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
