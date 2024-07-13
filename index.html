@@ -765,6 +765,9 @@
     
     
     <script>
+      let map;
+      let markers = [];
+
       async function initMap() {
             const locations = [
                 { name: "Mc Fry's-South B",address:"Mchumbi Rd, Nairobi", Contact: "0786425640", lat: -1.3101264519890934, lng: 36.83767291299854 }, 
@@ -783,27 +786,86 @@
                 { name: "Mc Fry's-Gigiri",address:"Limuru Rd, Nairobi", Contact: "0739387595", lat: -1.2377095441362655, lng: 36.81017146736081 },
                 ];
   
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 12,
-                center: locations[0], 
-            });
-  
-            locations.forEach(location => {
-                const marker = new google.maps.Marker({
-                    position: { lat: location.lat, lng: location.lng },
-                    map: map,
-                    title: location.name
-                });
-  
-                const infoWindow = new google.maps.InfoWindow({
-                    content: `<h3>${location.name}</h3><p>Address: ${location.address || 'No address available'}</p>`
-                });
-  
-                marker.addListener('click', () => {
-                    infoWindow.open(map, marker);
-                });
-            });
-        }
+            map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: locations[0],
+    });
+
+    // Create markers for all locations
+    createMarkers(locations);
+
+    // Add search input and button to the map
+    const searchDiv = document.createElement("div");
+    searchDiv.style.padding = "10px";
+    searchDiv.style.backgroundColor = "white";
+    searchDiv.style.marginTop = "10px";
+    
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Search locations";
+    input.style.marginRight = "10px";
+    
+    const button = document.createElement("button");
+    button.textContent = "Search";
+    
+    searchDiv.appendChild(input);
+    searchDiv.appendChild(button);
+    
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(searchDiv);
+
+    // Add event listener for the search button
+    button.addEventListener("click", () => {
+      searchLocations(input.value, locations);
+    });
+
+    // Add event listener for the enter key in the input field
+    input.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        searchLocations(input.value, locations);
+      }
+    });
+  }
+
+  function createMarkers(locations) {
+    // Clear existing markers
+    markers.forEach(marker => marker.setMap(null));
+    markers = [];
+
+    locations.forEach(location => {
+      const marker = new google.maps.Marker({
+        position: { lat: location.lat, lng: location.lng },
+        map: map,
+        title: location.name
+      });
+
+      const infoWindow = new google.maps.InfoWindow({
+        content: `<h3>${location.name}</h3><p>Address: ${location.address || 'No address available'}</p><p>Contact: ${location.Contact || 'No contact available'}</p>`
+      });
+
+      marker.addListener('click', () => {
+        infoWindow.open(map, marker);
+      });
+
+      markers.push(marker);
+    });
+  }
+
+  function searchLocations(query, locations) {
+    query = query.toLowerCase();
+    const filteredLocations = locations.filter(location => 
+      location.name.toLowerCase().includes(query) ||
+      (location.address && location.address.toLowerCase().includes(query))
+    );
+
+    if (filteredLocations.length > 0) {
+      createMarkers(filteredLocations);
+      
+      // Center the map on the first result
+      map.setCenter({ lat: filteredLocations[0].lat, lng: filteredLocations[0].lng });
+    } else {
+      alert("No locations found matching your search.");
+    }
+  }
     </script>
     <script src="index.js"></script>
 
